@@ -21,7 +21,7 @@ export class ReservationsController extends Contorller {
                 return res.status(500).json({ error: "Database connection not established" });
             }
 
-            const resp = await DB.connection.query("SELECT * FROM lab_b310.Reservations;");
+            const resp = await DB.connection.query( ` SELECT * FROM lab_b310.Reservations; ` );
 
             logger.info("Query executed successfully.");
             res.json(resp);
